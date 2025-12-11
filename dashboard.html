@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            background-color: #e4ffea;
+        }
+
+        .sidebar {
+            width: 45vmin;
+            height: 100vh;
+            margin-left: 0;
+            background: linear-gradient(#c3f4ce, #a2c8a8);
+        }
+
+        .logo img {
+            margin: 3vmin 12vmin 5vmin 12vmin;
+            height: 15vmin;
+        }
+
+        .navbar a {
+            display: flex;
+            text-decoration: none;
+            padding-bottom: 5vmin;
+            margin-left: 13vmin;
+            color: #000000;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+
+        }
+
+        #navbar-icon {
+            height: 2.5vmin;
+            padding-right: 1vmin;
+        }
+
+        .navbar button {
+            margin-left: 15vmin;
+            padding: 2vmin;
+            border-radius: 3vmin;
+            border: none;
+            margin-top: 18vmin;
+            cursor: pointer;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome {
+            height: 10vmin;
+            width: 40vmin;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            background-color: #cecccc;
+            margin: 5vmin 0 0 40%;
+            padding: 3vmin 5vmin 12vmin 10vmin;
+        }
+
+        .welcome h1 {
+            font-size: 7vmin;
+            padding-bottom: 5vmin;
+            align-self: center;
+        }
+
+        .welcome p {
+            font-size: 2.8vmin;
+            align-self: center;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            height: 68vmin;
+            width: 160vmin;
+            border: 5px solid transparent;
+            margin-top: 2%;
+            margin-left: 5%;
+            justify-content: space-evenly;
+
+        }
+
+        #box {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            height: 22vmin;
+            width: 38vmin;
+            background-color: #d0cccc;
+            padding-top: 1vmin;
+            border-radius: 10%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #box a {
+            text-decoration: none;
+            color: black;
+            font-size: 4vmin;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 4vmin;
+        }
+
+        #box p {
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
+            padding-top: 1.5vmin;
+            font-size: 2.5vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/img/student.png">
+        </div>
+
+        <div class="navbar">
+            <a href="dashboard.html">
+                <img id="navbar-icon" src="assets/img/dashboard.png">
+                Dashboard </a>
+            <a href="attendance.html">
+                <img id="navbar-icon" src="assets/img/attendance.png">
+                Attendance</a>
+            <a href="assignment.html">
+                <img id="navbar-icon" src="assets/img/assignments.png">
+                Assignment</a>
+            <a href="timetable.html">
+                <img id="navbar-icon" src="assets/img/timetable.png">
+                Time Table</a>
+            <a href="habits.html">
+                <img id="navbar-icon" src="assets/img/habits.png">
+                Habit</a>
+            <a href="study-planner.html">
+                <img id="navbar-icon" src="assets/img/planner.png">Study Planner</a>
+
+            <button id="log-out">Log Out</button>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="welcome">
+            <h1> Welcome !</h1>
+            <p>Let’s Make Today Productive.</p>
+        </div>
+
+        <div class="content">
+            <div id="box">
+                <a href="assignment.html">Assignment</a>
+                <p> Pending: 3</p>
+                <p>Due Today: 1</p>
+            </div>
+            <div id="box">
+                <a href="attendance.html">Attendance</a>
+                <p>Present: 18 | Absent: 2</p>
+                <p>Percentage: 90%</p>
+            </div>
+            <div id="box">
+                <a href="habits.html">Habit</a>
+                <p>Habits: 4</p>
+                <p>Streak: 6 days</p>
+            </div>
+            <div id="box">
+                <a href="study-planner.html">Study Planner</a>
+                <p>Tasks Today: 3</p>
+                <p>Hours Planned: 2</p>
+            </div>
+            <div id="box">
+                <a href="timetable.html">Timetable</a>
+                <p>Next Class: Math</p>
+                <p>10:30 AM</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

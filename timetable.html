@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            background-color: #e4ffea;
+        }
+
+        .sidebar {
+            width: 45vmin;
+            height: 100vh;
+            margin-left: 0;
+            background: linear-gradient(#c3f4ce, #a2c8a8);
+        }
+
+        .logo img {
+            margin: 3vmin 12vmin 5vmin 12vmin;
+            height: 15vmin;
+        }
+
+        .navbar a {
+            display: flex;
+            text-decoration: none;
+            padding-bottom: 5vmin;
+            margin-left: 13vmin;
+            color: #000000;
+        }
+
+        .navbar a:hover {
+            text-decoration: 1.5px underline black;
+        }
+
+        #navbar-icon {
+            height: 2.5vmin;
+            padding-right: 1vmin;
+        }
+
+        .navbar button {
+            margin-left: 15vmin;
+            padding: 2vmin;
+            border-radius: 3vmin;
+            border: none;
+            margin-top: 18vmin;
+            cursor: pointer;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome {
+            height: 10vmin;
+            width: 50vmin;
+            margin: 5vmin 0 0 30%;
+            padding: 3vmin 5vmin 12vmin 10vmin;
+        }
+
+        .welcome h1 {
+            font-size: 7vmin;
+        }
+
+
+        .title {
+            font-size: 30px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 10vmin;
+        }
+
+        .table-container {
+            background: #a6d5ef;
+            margin: 10vmin 30vmin 10vmin 30vmin;
+
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        thead th {
+            background: #0a6a9e;
+            color: black;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        tbody td {
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .lunch-row td {
+            background: #fafafa;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .lunch {
+            color: black;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/img/student.png">
+        </div>
+
+        <div class="navbar">
+            <a href="dashboard.html">
+                <img id="navbar-icon" src="assets/img/dashboard.png">
+                Dashboard </a>
+            <a href="attendance.html">
+                <img id="navbar-icon" src="assets/img/attendance.png">
+                Attendance</a>
+            <a href="assignment.html">
+                <img id="navbar-icon" src="assets/img/assignments.png">
+                Assignment</a>
+            <a href="timetable.html">
+                <img id="navbar-icon" src="assets/img/timetable.png">
+                Time Table</a>
+            <a href="habits.html">
+                <img id="navbar-icon" src="assets/img/habits.png">
+                Habit</a>
+            <a href="study-planner.html">
+                <img id="navbar-icon" src="assets/img/planner.png">Study Planner</a>
+
+            <button id="log-out">Log Out</button>
+        </div>
+    </div>
+
+    <div class="middle">
+
+        <h1 class="title">Weekly Timetable</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>9:30 - 10:30</td>
+                        <td>Digital Electronics</td>
+                        <td>Maths</td>
+                        <td>Signals</td>
+                        <td>EMFT</td>
+                        <td>Java</td>
+                        <td>Library</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 11:30</td>
+                        <td>Maths</td>
+                        <td>Signals</td>
+                        <td>Digital</td>
+                        <td>Java Lab</td>
+                        <td>EMFT</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>11:30 - 12:30</td>
+                        <td>Signals</td>
+                        <td>EMFT</td>
+                        <td>Maths</td>
+                        <td>Digital</td>
+                        <td>Java</td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="lunch-row">
+                        <td>1:00 - 2:00</td>
+                        <td colspan="6" class="lunch">Lunch Break</td>
+                    </tr>
+
+                    <tr>
+                        <td>2:00 - 3:00</td>
+                        <td>Java Lab</td>
+                        <td>Signals Lab</td>
+                        <td>Mini Project</td>
+                        <td>EMFT Lab</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="assets/js/timetable.js"></script>
+</body>
+
+</html>

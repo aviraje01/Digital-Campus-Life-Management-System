@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            background-color: #e4ffea;
+        }
+
+        .sidebar {
+            width: 45vmin;
+            height: 100vh;
+            margin-left: 0;
+            background: linear-gradient(#c3f4ce, #a2c8a8);
+        }
+
+        .logo img {
+            margin: 3vmin 12vmin 5vmin 12vmin;
+            height: 15vmin;
+        }
+
+        .navbar a {
+            display: flex;
+            text-decoration: none;
+            padding-bottom: 5vmin;
+            margin-left: 13vmin;
+            color: #000000;
+        }
+
+        .navbar a:hover {
+            text-decoration: 1.5px underline black;
+        }
+
+        #navbar-icon {
+            height: 2.5vmin;
+            padding-right: 1vmin;
+        }
+
+        .navbar button {
+            margin-left: 15vmin;
+            padding: 2vmin;
+            border-radius: 3vmin;
+            border: none;
+            margin-top: 18vmin;
+            cursor: pointer;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome {
+            height: 10vmin;
+            width: 50vmin;
+            margin: 5vmin 0 0 30%;
+            padding: 3vmin 5vmin 12vmin 10vmin;
+        }
+
+        .welcome h1 {
+            font-size: 7vmin;
+        }
+
+        .title {
+            font-size: 25px;
+            margin-top: 10vmin;
+            margin-left: 50vmin;
+            text-align: center;
+            color: #0b0603;
+            margin-bottom: 25px;
+        }
+
+        .habit-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 8vmin;
+            margin-bottom: 10vmin;
+            margin-left: 40vmin;
+        }
+
+        .habit-table {
+            width: 100%;
+
+            background-color: white;
+
+
+            overflow: scroll;
+        }
+
+        .habit-table th {
+            background-color: #d3e6f5;
+            padding: 5vmin;
+            font-size: 2.2vmin;
+            color: #123157;
+        }
+
+        .habit-table td {
+            border: 1px solid #466f8e;
+            padding: 5vmin;
+            text-align: center;
+            font-size: 2vmin;
+        }
+
+        .done {
+            background-color: #9bc3d8;
+            color: #2c7a2c;
+            font-size: 2.5vmin;
+            font-weight: bold;
+            border-radius: 0.5vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/img/student.png">
+        </div>
+
+        <div class="navbar">
+            <a href="dashboard.html">
+                <img id="navbar-icon" src="assets/img/dashboard.png">
+                Dashboard </a>
+            <a href="attendance.html">
+                <img id="navbar-icon" src="assets/img/attendance.png">
+                Attendance</a>
+            <a href="assignment.html">
+                <img id="navbar-icon" src="assets/img/assignments.png">
+                Assignment</a>
+            <a href="timetable.html">
+                <img id="navbar-icon" src="assets/img/timetable.png">
+                Time Table</a>
+            <a href="habits.html">
+                <img id="navbar-icon" src="assets/img/habits.png">
+                Habit</a>
+            <a href="study-planner.html">
+                <img id="navbar-icon" src="assets/img/planner.png">Study Planner</a>
+
+            <button id="log-out">Log Out</button>
+        </div>
+    </div>
+
+    <div class="middle">
+        <h1 class="title">WEEKLY HABIT TRACKER</h1>
+        <div class="habit-container">
+            <table class="habit-table">
+                <thead>
+                    <tr>
+                        <th>Habit</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Daily 2-hr<br>Focused Study</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>30 min<br>Revision</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Morning Walk<br>/ Stretch</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td class="done">✔</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="assets/js/habits.js"></script>
+</body>
+
+</html>

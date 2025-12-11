@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            background-color: #e4ffea;
+        }
+
+        .sidebar {
+            width: 45vmin;
+            height: 100vh;
+            margin-left: 0;
+            background: linear-gradient(#c3f4ce, #a2c8a8);
+        }
+
+        .logo img {
+            margin: 3vmin 12vmin 5vmin 12vmin;
+            height: 15vmin;
+        }
+
+        .navbar a {
+            display: flex;
+            text-decoration: none;
+            padding-bottom: 5vmin;
+            margin-left: 13vmin;
+            color: #000000;
+        }
+
+        .navbar a:hover {
+            text-decoration: 1.5px underline black;
+        }
+
+        #navbar-icon {
+            height: 2.5vmin;
+            padding-right: 1vmin;
+        }
+
+        .navbar button {
+            margin-left: 15vmin;
+            padding: 2vmin;
+            border-radius: 3vmin;
+            border: none;
+            margin-top: 18vmin;
+            cursor: pointer;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            margin: 10vmin 0vmin 10vmin 60vmin;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #DDF2FD;
+            font-size: 18px;
+            margin-left: 30vmin;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 2px solid #c9b8a4;
+            padding: 15px;
+        }
+
+        th {
+            background-color: #427D9D;
+            font-weight: 700;
+        }
+
+        .head-row th:first-child {
+            width: 30%;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/img/student.png">
+        </div>
+
+        <div class="navbar">
+            <a href="dashboard.html">
+                <img id="navbar-icon" src="assets/img/dashboard.png">
+                Dashboard </a>
+            <a href="attendance.html">
+                <img id="navbar-icon" src="assets/img/attendance.png">
+                Attendance</a>
+            <a href="assignment.html">
+                <img id="navbar-icon" src="assets/img/assignments.png">
+                Assignment</a>
+            <a href="timetable.html">
+                <img id="navbar-icon" src="assets/img/timetable.png">
+                Time Table</a>
+            <a href="habits.html">
+                <img id="navbar-icon" src="assets/img/habits.png">
+                Habit</a>
+            <a href="study-planner.html">
+                <img id="navbar-icon" src="assets/img/planner.png">Study Planner</a>
+
+            <button id="log-out">Log Out</button>
+        </div>
+    </div>
+
+    <div class="middle">
+        <h2 class="title">STUDY PLANNER</h2>
+
+        <table>
+            <tr class="head-row">
+                <th>DAILY STUDY TASKS</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+            </tr>
+
+            <tr>
+                <td>2-hour focused study</td>
+                <td>8:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>PYQ set</td>
+                <td>10:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Concept revision</td>
+                <td>12:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Mock test</td>
+                <td>14:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Error-log review</td>
+                <td>16:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script src="assets/js/study.planner.js"></script>
+</body>
+
+</html>

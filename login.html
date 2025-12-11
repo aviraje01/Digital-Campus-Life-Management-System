@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Campus Life Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(145deg, #6fa8ff, #bcd6ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 380px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            animation: 0.7s ease;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+            font-size: 15px;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            background: #4a7cff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2d5fe6;
+        }
+
+        .switch-btn {
+            background: transparent;
+            border: 2px solid #4a7cff;
+            color: #4a7cff;
+        }
+
+        .switch-btn:hover {
+            background: #4a7cff;
+            color: white;
+        }
+
+        .msg {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIGN IN FORM -->
+        <div id="signinBox">
+            <h2>Sign In</h2>
+            <input type="email" id="loginEmail" placeholder="Enter Email">
+            <input type="password" id="loginPassword" placeholder="Enter Password">
+
+            <button onclick="login()">Sign In</button>
+
+            <button class="switch-btn" onclick="showSignup()">Create Account</button>
+
+            <div id="loginMsg"></div>
+        </div>
+
+        <!-- SIGN UP FORM -->
+        <div id="signupBox" class="hidden">
+            <h2>Create Account</h2>
+
+            <input type="text" id="signupName" placeholder="Enter Full Name">
+            <input type="email" id="signupEmail" placeholder="Enter Email">
+            <input type="password" id="signupPassword" placeholder="Create Password">
+
+            <button onclick="signup()">Sign Up</button>
+
+            <button class="switch-btn" onclick="showSignin()">Back to Sign In</button>
+
+            <div id="signupMsg"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // Switch to Sign Up
+        function showSignup() {
+            document.getElementById("signinBox").classList.add("hidden");
+            document.getElementById("signupBox").classList.remove("hidden");
+        }
+
+        // Switch to Sign In
+        function showSignin() {
+            document.getElementById("signupBox").classList.add("hidden");
+            document.getElementById("signinBox").classList.remove("hidden");
+        }
+
+        // SIGN UP FUNCTION
+        function signup() {
+            let name = document.getElementById("signupName").value.trim();
+            let email = document.getElementById("signupEmail").value.trim();
+            let password = document.getElementById("signupPassword").value;
+
+            let msg = document.getElementById("signupMsg");
+
+            if (!name || !email || !password) {
+                msg.textContent = "Please fill all fields!";
+                msg.className = "msg error";
+                return;
+            }
+
+            if (password.length < 6) {
+                msg.textContent = "Password must be at least 6 characters!";
+                msg.className = "msg error";
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            if (users.some(u => u.email === email)) {
+                msg.textContent = "Account already exists!";
+                msg.className = "msg error";
+                return;
+            }
+
+            users.push({ name, email, password });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            msg.textContent = "Account created successfully!";
+            msg.className = "msg success";
+
+            setTimeout(() => showSignin(), 1000);
+        }
+
+        // LOGIN FUNCTION
+        function login() {
+            let email = document.getElementById("loginEmail").value.trim();
+            let password = document.getElementById("loginPassword").value;
+
+            let msg = document.getElementById("loginMsg");
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                msg.textContent = "Invalid email or password!";
+                msg.className = "msg error";
+                return;
+            }
+
+            localStorage.setItem("currentUser", user.email);
+            msg.textContent = "Login successful!";
+            msg.className = "msg success";
+
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 900);
+        }
+    </script>
+
+</body>
+
+</html>
