@@ -94,7 +94,8 @@ document.getElementById("log-out").addEventListener("click", function () {
         localStorage.clear();
 
         // Redirect to login page
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 });
+
 
